@@ -222,13 +222,7 @@ plt.title("Female life expectancy vs Greenhouse gas emissions")
 plt.show()
 
 ##
-sns.relplot(data=our_data , 
-            x="Life expectancy, female" , 
-            y="Greenhouse gas emissions" , 
-            col="Region" , 
-            kind="scatter")
-plt.title("Female life expectancy vs Greenhouse gas emissions")
-plt.show()
+
 
 
 ############ 6 ##############################################################
@@ -253,11 +247,16 @@ print(filtered_values_for_emissions ['Country Name'] )
 
 
 ##c)
-print(our_data[our_data['Country Name'] == 'Qatar'])
-print(our_data[col])
+#prints the variables of the two countries that we wish to analyse for this part 
+print( filtered_values_for_emissions ['Country Name'] ,  
+      filtered_values_for_emissions ['Region'] , 
+      filtered_values_for_emissions ['Internet use'] , 
+      filtered_values_for_emissions ['emissions_per_capita'])
 
 ##d)
-
+#prints the countries we found with high emissions and whether they have a high economy
+print(pd.crosstab(our_data["High Income Economy"], 
+                  filtered_values_for_emissions ['Country Name']))
 
 
 
