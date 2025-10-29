@@ -191,15 +191,16 @@ sns.relplot(data=our_data ,
             x="Life expectancy, female" , 
             y="Physicians" , 
             col="Region" ,kind="scatter")
-plt.title("Female life expectancy vs Greenhouse gas emissions")
+plt.title("Analysing is the amount of physicians present in each region on the female life expectancy")
 plt.show()
 
 ##Does the GNI in each reagion affect the female life expectancy (do they have enough money for the ressources they need)
 sns.relplot(data=our_data , 
             x="Life expectancy, female" , 
-            y="GNI" , col="Region" , 
+            y="GNI" , col="Region" ,
+            hue="High Income Economy" ,
             kind="scatter")
-plt.title("Female life expectancy vs Greenhouse gas emissions")
+plt.title("Analysing how the GNI per region can effect female life expectancy")
 plt.show()
 
 ##Does the education of women affect the life expectancy of women since they might have other more dangerous positions open
@@ -208,7 +209,7 @@ sns.relplot(data=our_data ,
             y="Tertiary education, female" , 
             size="Population" , 
             col="Region" ,kind="scatter")
-plt.title("Female life expectancy vs Greenhouse gas emissions")
+plt.title("Analysis of the relationship of female life expectancy and the tertiary education that the women have access to")
 plt.show()
 
 ##Is female life expectancy linked to greenhouse gas emissions that could be a result of international tourism
@@ -218,11 +219,18 @@ sns.relplot(data=our_data ,
             size="International tourism" , 
             col="Region" , 
             kind="scatter")
-plt.title("Female life expectancy vs Greenhouse gas emissions")
+plt.title("Relationship between female life expectancy and the greenhouse gas emissions linked to toursim")
 plt.show()
 
-##
-
+##Does the life expectancy of females rely on the greenhouse gaz emissions when the populations are either greater or smaller then the others?
+sns.relplot(data=our_data , 
+            x="Life expectancy, female" , 
+            y="Greenhouse gas emissions" , 
+            size="Population" , 
+            col="Region" , 
+            kind="scatter")
+plt.title("Female life expectancies relationship with the greenhouse gas emissions for different population samples")
+plt.show()
 
 
 ############ 6 ##############################################################
@@ -239,7 +247,7 @@ sns.relplot(data=our_data ,
             y="Internet use" , 
             kind="scatter") #only a scatter plot relationship
 
-plt.title("Emissions per capita vs Internet use")
+plt.title("Comparing the Emissions per capita vof each country and their Internet Use")
 
 ##b)
 filtered_values_for_emissions= our_data[our_data['emissions_per_capita'] > 0.03]
@@ -252,6 +260,7 @@ print( filtered_values_for_emissions ['Country Name'] ,
       filtered_values_for_emissions ['Region'] , 
       filtered_values_for_emissions ['Internet use'] , 
       filtered_values_for_emissions ['emissions_per_capita'])
+
 
 ##d)
 #prints the countries we found with high emissions and whether they have a high economy
