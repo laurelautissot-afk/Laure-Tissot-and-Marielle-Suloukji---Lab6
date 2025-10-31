@@ -1,3 +1,11 @@
+# Programming in Science 401-SN1-RE sect.00004 and sect.00003
+# Tiago Bortoletto Vaz
+# Marielle Suloukji 6291739
+# Laure Tissot 2480659
+# 31 October 2025 
+#                              Lab 6 
+# Overview: In this scrip we solved the probelms given in lab 6, in order to manipulate, analyse, and determine relationships about the values. (Statistics about diffrent countries around the world.)
+
 #################### Part 3 ######################################
 import seaborn as sns
 
